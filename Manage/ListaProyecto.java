@@ -1,6 +1,7 @@
 
-package Projects;
+package Manage;
 
+import Projects.*;
 import Tasks.Task;
 import java.util.ArrayList;
 import java.util.HashSet;

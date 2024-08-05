@@ -13,8 +13,8 @@ import java.util.HashSet;
 public class ListaUsuario {
   private HashSet<User> listusuarios;
 
-   public ListaUsuario(HashSet listusuarios) {
-        this.listusuarios = listusuarios;
+   public ListaUsuario() {
+        this.listusuarios = new HashSet<>();
     }
    
     public HashSet getListProyectos() {

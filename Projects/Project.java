@@ -4,7 +4,10 @@
  */
 package Projects;
 
+import Comments.Comment;
 import Tasks.Task;
+import Users.User;
+import java.util.ArrayList;
 import java.util.HashSet;
 
 /**
@@ -14,7 +17,7 @@ import java.util.HashSet;
 public class Project {
     private int id;
     private String name;
-    private HashSet<Task>tasks;
+    private ArrayList<Task>tasks;
 
     public int getId() {
         return id;
@@ -24,19 +27,23 @@ public class Project {
         return name;
     }
 
-    public HashSet<Task> getTask() {
+    public ArrayList<Task> getTask() {
         return tasks;
     }
     
-      public void AddTask(Task tasks){
-        this.tasks.add(tasks);
-        
+      public void AddTask(String descripcion,User user){
+          for(int i = 0;i<tasks.size();i++){
+              if(tasks.get(i)==null){
+        Task task = new Task(i,descripcion,user);
+              tasks.add(task);
+          }
+          }
     }
 
     public Project(int id, String name) {
         this.id = id;
         this.name = name;
-        this.tasks = new HashSet<>();
+        this.tasks = new ArrayList<>();
     }
 
     public Project() {

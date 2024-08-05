@@ -63,9 +63,14 @@ public class Task {
         return "Task{" + "id=" + id + ", Description=" + Description + ", Complete=" + Complete + ", User=" + User + ", comments=" + comments + '}';
     }
     
-    public void AddComment(Comment comments){
-        this.comments.add(comments);
-        
+   public void Addcomment(String descripcion,User user){
+          for(int i = 0;i<comments.size();i++){
+              if(comments.get(i)==null){
+        Comment comment = new Comment(i, user, descripcion);
+              comments.add(comment);
+          }
+          }
     }
+
            
 }

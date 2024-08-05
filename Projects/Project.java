@@ -46,5 +46,39 @@ public class Project {
     public String toString() {
         return "Project{" + "id=" + id + ", name=" + name + ", tasks=" + tasks + '}';
     }
-         
+    public int cantidadTareas(){
+        int cont=0;
+        for(Task task : tasks){
+            if(task!=null){
+                cont++;
+            }
+        }
+        return cont;
+    } 
+
+    public int cantTareasCompletas(){
+        int cont=0;
+        for(Task task : tasks){
+            if(task!=null&&task.isComplete()){
+                cont++;
+            }
+        }
+        return cont;
+    }  
+      public double calcularPorcentajeCompletado(HashSet<Task>tareas) {
+        if (tareas == null || tareas.isEmpty()) {
+            return 0.0;
+        }
+
+        int tareasCompletadas = 0;
+        int totalTareas = tareas.size();
+
+        for (Task tarea : tareas) {
+            if (tarea.isComplete()) {
+                tareasCompletadas++;
+            }
+        }
+
+        return ((double) tareasCompletadas / totalTareas) * 100;
+    }
 }
